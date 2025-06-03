@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NutriFácil - Preferências Alimentares</title>
-  <link rel="stylesheet" href="../styles/preferencias-alimentares.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NutriFácil - Preferências Alimentares</title>
+    <link rel="stylesheet" href="../styles/preferencias-alimentares.css" />
+   <script src="../script/script.js"></script>
 </head>
-<body>
-  <header>
-    <h1>🍽️ NutriFácil</h1>
-    <p>Seu sistema de planejamento alimentar personalizado</p>
-  </header>
+<body onload ="onload()">
+    <header>
+        <h1>🍴 NutriFácil</h1>
+        <p>Seu sistema de planejamento alimentar personalizado</p>
+    </header>
 
-  <main>
-    <section class="cards">
-      <div class="card tmb">
-        <p class="label">TMB</p>
-        <p class="valor">253 <span>kcal/dia</span></p>
-      </div>
-      <div class="card imc">
-        <p class="label">IMC</p>
-        <p class="valor">454.55 <span>Obesidade</span></p>
-      </div>
-      <div class="card agua">
-        <p class="label">Água</p>
-        <p class="valor">770 <span>ml/dia</span></p>
-      </div>
-      <div class="card meta">
-        <p class="label">Meta</p>
-        <p class="valor red">Emagrecimento <span>Objetivo</span></p>
-      </div>
-    </section>
+    <main class="form-container">
+        <h2><span>Preferências Alimentares -</span> <span class="green">Dieta Mediterrânea</span></h2>
+        <p class="subtitulo">Azeite de oliva, peixes, grãos integrais, legumes e frutas</p>
 
-    <section class="plano">
-      <h2>Seu Plano Alimentar - Dieta Mediterrânea</h2>
-      <p class="descricao">Saúde cardiovascular e manutenção de peso</p>
+        <form>
+            <div class="grid-container">
+                <fieldset>
+                    <legend>Proteínas</legend>
+                    <label><input type="checkbox" name="proteina" value="peixe"> Peixes </label>
+                    <label><input type="checkbox" name="proteina" value="frutos"> Frutos do mar</label>
+                    <label><input type="checkbox" name="proteina" value="ovos"> Ovos</label>
+                    <label><input type="checkbox" name="proteina" value="queijos"> Queijos</label>
+                    <label><input type="checkbox" name="proteina" value="iogurte"> Iogurte grego</label>
+                    <label><input type="checkbox" name="proteina" value="castanhas"> Nozes e castanhas</label>
+                </fieldset>
 
-      <div class="categorias">
-        <div class="categoria proteina">
-          <h3><span class="dot azul"></span> Proteínas</h3>
-          <p class="vazio">Nenhuma proteína selecionada</p>
-        </div>
-        <div class="categoria legumes">
-          <h3><span class="dot verde"></span> Legumes</h3>
-          <p class="vazio">Nenhum legume selecionado</p>
-        </div>
-        <div class="categoria verduras">
-          <h3><span class="dot verde"></span> Verduras</h3>
-          <p class="vazio">Nenhuma verdura selecionada</p>
-        </div>
-        <div class="categoria carbo">
-          <h3><span class="dot laranja"></span> Carboidratos</h3>
-          <ul>
-            <li>Quinoa</li>
-          </ul>
-        </div>
-      </div>
+                <fieldset>
+                    <legend>Legumes</legend>
+                    <label><input type="checkbox" name="legumes" value="tomate"> Tomate</label>
+                    <label><input type="checkbox" name="legumes" value="pimentao"> Pimentão</label>
+                    <label><input type="checkbox" name="legumes" value="abobrinha"> Abobrinha</label>
+                    <label><input type="checkbox" name="legumes" value="berinjela"> Berinjela</label>
+                    <label><input type="checkbox" name="legumes" value="alcachofra"> Alcachofra</label>
+                    <label><input type="checkbox" name="legumes" value="cebola"> Cebola</label>
+                </fieldset>
 
-      <div class="alergia">
-        <strong>⚠️ Alergias Consideradas:</strong>
-        <p>Alimentos foram filtrados considerando suas alergias: <strong>Ovo</strong></p>
-      </div>
+                <fieldset>
+                    <legend>Verduras</legend>
+                    <label><input type="checkbox" name="verduras" value="espinafre"> Espinafre</label>
+                    <label><input type="checkbox" name="verduras" value="rucula"> Rúcula</label>
+                    <label><input type="checkbox" name="verduras" value="alface"> Alface</label>
+                    <label><input type="checkbox" name="verduras" value="manjericao"> Manjericão</label>
+                    <label><input type="checkbox" name="verduras" value="salsa"> Salsa</label>
+                    <label><input type="checkbox" name="verduras" value="oregano"> Orégano</label>
+                </fieldset>
 
-      <div class="botoes">
-        <button type="button">Criar Novo Plano</button>
-      </div>
-    </section>
-  </main>
+                <fieldset>
+                    <legend>Carboidratos/Gorduras</legend>
+                    <label><input type="checkbox" name="carboidratos" value="quinoa"> Quinoa</label>
+                    <label><input type="checkbox" name="carboidratos" value="arroz"> Arroz integral</label>
+                    <label><input type="checkbox" name="carboidratos" value="aveia"> Aveia</label>
+                    <label><input type="checkbox" name="carboidratos" value="pao"> Pão integral</label>
+                    <label><input type="checkbox" name="carboidratos" value="batata"> Batata doce</label>
+                    <label><input type="checkbox" name="carboidratos" value="frutas"> Frutas</label>
+                </fieldset>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="voltar">Voltar</button>
+                <a type="submit"  class="button avancar"  onclick="salvarPreferencias()" href="plano-alimentar.html">Ver Meu Plano Alimentar</a>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

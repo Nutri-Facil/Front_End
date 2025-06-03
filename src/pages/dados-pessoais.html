@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriFácil - Dados Pessoais</title>
     <link rel="stylesheet" href="../styles/dados-pessoais.css">
+    <script src="../script/script.js"></script>
+    
 </head>
-<body>
+<body >
     <header>
         <h1>🍴 NutriFácil</h1>
         <p>Seu sistema de planejamento alimentar personalizado</p>
@@ -63,8 +65,9 @@
                     <label><input type="checkbox" name="restricao" value="nenhuma"> Nenhuma</label>
                 </div>
             </fieldset>
-
-            <button type="submit">Continuar para Preferências Alimentares</button>
+            <div class="container-do-botao">
+                    <a onclick="save_dados_pessoais()" href="preferencias-alimentares.html" class="button" >Continuar para Preferências Alimentares</a>
+            </div>
         </form>
     </main>
 </body>

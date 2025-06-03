@@ -1,8 +1,12 @@
 body {
     margin: 0;
+    min-height: 100vh; /* Garante que pelo menos 100% da altura da tela seja usada */
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #22a844, #2a65d3);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém o fundo fixo */
     color: #333;
+
 }
 
 header {
@@ -104,4 +108,28 @@ button {
 
 button:hover {
     background-color: #168b39;
+}
+
+.button {
+   
+    display: inline-block; /* Ou 'block' se quiser que ele ocupe 100% da largura */
+    padding: 15px 25px; /* Espaçamento interno para o tamanho do botão */
+    background-color: #28a745; /* Cor verde da imagem */
+    color: white; /* Cor do texto */
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 8px; /* Cantos arredondados */
+    font-size: 1.1em; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Muda o cursor para "mãozinha" */
+    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.container-do-botao {
+        text-align: center;
+        margin-top: 20px; /* Apenas para dar um espaço acima do botão no exemplo */
+    }
+
+.button:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
 }

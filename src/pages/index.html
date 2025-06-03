@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriFácil</title>
-    <link rel="stylesheet" href="./src/styles/index.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="../script/script.js"></script>
 </head>
 <body>
     <header class="header">
@@ -19,25 +20,25 @@
                 <div class="circle">M</div>
                 <h3>Mediterrânea</h3>
                 <p>Azeite de oliva, peixes,<br>grãos integrais, legumes<br>e frutas</p>
-                <span>Saúde cardiovascular e<br>manutenção de peso</span>
+                <a onclick="save_dieta('M')"  href="dados-pessoais.html">Saúde cardiovascular e<br>manutenção de peso</a>
             </div>
             <div class="card lowcarb">
                 <div class="circle">L</div>
                 <h3>Low Carb</h3>
                 <p>Redução de<br>carboidratos, aumento<br>de proteínas e gorduras<br>boas</p>
-                <span>Emagrecimento e controle<br>glicêmico</span>
+                <a onclick="save_dieta('L')" href="dados-pessoais.html" >Emagrecimento e controle<br>glicêmico</a>
             </div>
             <div class="card cetogenica">
                 <div class="circle">C</div>
                 <h3>Cetogênica</h3>
                 <p>Ingestão muito baixa de<br>carboidratos e alta em<br>gorduras</p>
-                <span>Perda de gordura rápida e<br>aumento de foco</span>
+                <a onclick="save_dieta('C')" href="dados-pessoais.html" >Perda de gordura rápida e<br>aumento de foco</a>
             </div>
             <div class="card vegetariana">
                 <div class="circle">V</div>
                 <h3>Vegetariana</h3>
                 <p>Sem carnes; inclui ovos,<br>laticínios, grãos, vegetais<br>e leguminosas</p>
-                <span>Alimentação plant-based<br>com proteínas completas</span>
+                <a onclick="save_dieta('V')" href="dados-pessoais.html">Alimentação plant-based<br>com proteínas completas</a>
             </div>
         </div>
         <div class="rodape">
