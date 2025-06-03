@@ -23,7 +23,7 @@ main {
 .title {
     font-size: 1.6rem;
     margin-bottom: 2rem;
-    color: #10192d;
+    color: #ffffff;
 }
 
 .diets-container {
@@ -116,5 +116,5 @@ main {
 }
 
 .rodape p{
-    color: #000;
+    color: #FFFFFF;
 }

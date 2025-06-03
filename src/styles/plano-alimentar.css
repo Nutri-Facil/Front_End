@@ -151,3 +151,11 @@ button {
 button:hover {
   background-color: #168b39;
 }
+
+.card.meta .valor.red {
+  margin-top: 5px;
+}
+
+p {
+  margin-top: 10px;
+}

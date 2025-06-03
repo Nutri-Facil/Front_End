@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NutriFácil - Preferências Alimentares</title>
+    <link rel="stylesheet" href="../styles/preferencias-alimentares.css" />
+   <script src="../script/script.js"></script>
+</head>
+<body onload ="onload()">
+    <header>
+        <h1>🍴 NutriFácil</h1>
+        <p>Seu sistema de planejamento alimentar personalizado</p>
+    </header>
+
+    <main class="form-container">
+        <h2><span>Preferências Alimentares -</span> <span class="green">Dieta Low Carb</span></h2>
+        <p class="subtitulo">Redução de carboidratos, aumento de proteínas e gorduras boas</p>
+
+        <form>
+            <div class="grid-container">
+                <fieldset>
+                    <legend>Proteínas</legend>
+                    <label><input type="checkbox" name="proteina" value="frango"> Frango</label>
+                    <label><input type="checkbox" name="proteina" value="carnesVermelhas"> Carne vermelha</label>
+                    <label><input type="checkbox" name="proteina" value="peixes"> Peixes</label>
+                    <label><input type="checkbox" name="proteina" value="ovos"> Ovos</label>
+                    <label><input type="checkbox" name="proteina" value="queijos"> Queijos</label>
+                    <label><input type="checkbox" name="proteina" value="whey"> Whey protein</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Legumes</legend>
+                    <label><input type="checkbox" name="legumes" value="brocolis"> Brócolis</label>
+                    <label><input type="checkbox" name="legumes" value="couve-flor"> Couve-flor</label>
+                    <label><input type="checkbox" name="legumes" value="abobrinha"> Abobrinha</label>
+                    <label><input type="checkbox" name="legumes" value="pepino"> Pepino</label>
+                    <label><input type="checkbox" name="legumes" value="pimentao"> Pimentão</label>
+                    <label><input type="checkbox" name="legumes" value="aspargos"> Aspargos</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Verduras</legend>
+                    <label><input type="checkbox" name="verduras" value="espinafre"> Espinafre</label>
+                    <label><input type="checkbox" name="verduras" value="couve"> Couve</label>
+                    <label><input type="checkbox" name="verduras" value="rucula"> Rúcula</label>
+                    <label><input type="checkbox" name="verduras" value="alface"> Alface</label>
+                    <label><input type="checkbox" name="verduras" value="agriao"> Agrião</label>
+                    <label><input type="checkbox" name="verduras" value="acelga"> Acelga</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Carboidratos/Gorduras</legend>
+                    <label><input type="checkbox" name="carboidratos" value="abacate"> Abacate</label>
+                    <label><input type="checkbox" name="carboidratos" value="oleaginosas"> Oleaginosas</label>
+                    <label><input type="checkbox" name="carboidratos" value="coco"> Coco</label>
+                    <label><input type="checkbox" name="carboidratos" value="azeite"> Azeite</label>
+                    <label><input type="checkbox" name="carboidratos" value="manteiga"> Manteiga</label>
+                    <label><input type="checkbox" name="carboidratos" value="sementes"> Sementes</label>
+                </fieldset>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="voltar">Voltar</button>
+                <a type="submit"  class="button avancar"  onclick="salvarPreferencias()" href="plano-alimentar.html">Ver Meu Plano Alimentar</a>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
