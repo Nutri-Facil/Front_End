@@ -6,8 +6,8 @@
     <title>NutriFácil - Plano Alimentar</title>
     <link rel="stylesheet" href="../styles/plano-alimentar.css">
     <script src="../script/script.js"></script>
-</head>
-<body>
+</head >
+<body onload ='onload()'>
   <header>
     <h1>🍽️ NutriFácil</h1>
     <p>Seu sistema de planejamento alimentar personalizado</p>
@@ -15,27 +15,40 @@
 
   <main>
     <section class="cards">
-      <div class="card tmb">
-        <p class="label">TMB</p>
-        <p class="valor">253 <span>kcal/dia</span></p>
-      </div>
-      <div class="card imc">
-        <p class="label">IMC</p>
-        <p class="valor">454.55 <span>Obesidade</span></p>
-      </div>
-      <div class="card agua">
-        <p class="label">Água</p>
-        <p class="valor">770 <span>ml/dia</span></p>
-      </div>
-      <div class="card meta">
-        <p class="label">Meta</p>
-        <p class="valor red">Emagrecimento <span>Objetivo</span></p>
-      </div>
+  <div class="card tmb">
+    <p class="label">TMB</p>
+    <div class="valor-container">
+      <input id="tmb" class="valor" readonly>
+      <span class="unidade">kcal/dia</span>
+    </div>
+  </div>
+  <div class="card imc">
+    <p class="label">IMC</p>
+    <div class="valor-container">
+      <input id="imc" class="valor" readonly>
+      <span class="unidade" id="categoria"></span>
+    </div>
+  </div>  
+  <div class="card agua">
+    <p class="label">Água</p>
+    <div class="valor-container">
+      <input id="agua" class="valor" readonly>
+      <span class="unidade">ml/dia</span>
+    </div>
+  </div>
+  <div class="card meta">
+    <p class="label">Meta</p>
+    <div class="valor-container">
+      <input id="meta" class="valor" readonly>
+      <span class="unidade">Objetivo</span>
+    </div>
+  </div>
+</section>
     </section>
 
     <section class="plano">
-      <h2>Seu Plano Alimentar - Dieta Mediterrânea</h2>
-      <p class="descricao">Saúde cardiovascular e manutenção de peso</p>
+    <h2>Seu Plano Alimentar - <span id="dieta">...</span></h2>
+    <p class="descricao"><span id="descricao">...</span></p>
 
       <div class="categorias">
         <div class="categoria proteina">
