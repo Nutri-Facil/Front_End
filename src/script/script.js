@@ -3,10 +3,10 @@ function save_dieta(tipo) {
   sessionStorage.setItem("dietaEscolhida", tipo);
 }
 
-
 function save_dados_pessoais() {
 
-  
+
+
 const peso = document.getElementById("peso").value;
 const altura = document.getElementById("altura").value;
 const idade = document.getElementById("idade").value;
@@ -27,6 +27,10 @@ sessionStorage.setItem("idade", idade);
 sessionStorage.setItem("sexo", sexo);
 sessionStorage.setItem("objetivo", objetivo);
 sessionStorage.setItem("restricoes", JSON.stringify(restricoesSelecionadas));
+
+const dietaEscolhida = sessionStorage.getItem("dietaEscolhida");
+
+direcionaPreferencias(dietaEscolhida)
 
 }
 
@@ -97,14 +101,10 @@ if (imc < 18.5) {
     classificacao = "Obesidade";
   } else {
     classificacao = "Valor inválido";
-  }
+}
 
-
-
-//return IMC
 document.getElementById('imc').value = Math.floor(imc)
 document.getElementById("categoria").textContent = classificacao;
-//document.getElementById('TBM').value =classificacao
 console.log("calculaIMC:", imc);
 
 }
@@ -112,8 +112,6 @@ console.log("calculaIMC:", imc);
 function calculaAGUA(peso){
 
   const agua = 35*peso
-
-  //return agua
   console.log("calculaAGUA:", agua);
   document.getElementById('agua').value = agua
 
@@ -137,7 +135,7 @@ function dieta(dietaEscolhida){
   var descDieta 
 
   if (dietaEscolhida == 'M') {
-    dietaEscolhida = "editerrânea";
+    dietaEscolhida = "Mediterrânea";
     descDieta = 'Saúde cardiovascular e manutenção de peso'
   } else if (dietaEscolhida == 'L') {
     dietaEscolhida = "Low Carb";
@@ -192,5 +190,19 @@ console.log("Carboidratos:", carboidratos);
  
 }
 
+function direcionaPreferencias(dietaEscolhida){
 
+
+if (dietaEscolhida === 'C') {
+    window.location.href = "preferencias-Cetogênica.html";
+  } else if (dietaEscolhida === 'M') {
+    window.location.href = "preferencias-Mediterrânea.html";
+  } else if (dietaEscolhida === 'L') {
+    window.location.href = "preferencias-LowCarb.html";
+  } else if (dietaEscolhida === 'V') {
+    window.location.href = "preferencias-Vegetariana.html";
+  } else {
+    alert("Dieta inválida. Por favor, selecione uma opção.");
+  }
+}
     
