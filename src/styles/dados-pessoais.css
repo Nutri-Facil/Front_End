@@ -85,7 +85,7 @@ legend {
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px 25px;
+    gap: 80px 150px;
 }
 
 .checkbox-group label {

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles/preferencias-alimentares.css" />
    <script src="../script/script.js"></script>
 </head>
-<body onload ="onload()">
+<body >
     <header>
         <h1>🍴 NutriFácil</h1>
         <p>Seu sistema de planejamento alimentar personalizado</p>
@@ -21,47 +21,47 @@
             <div class="grid-container">
                 <fieldset>
                     <legend>Proteínas</legend>
-                    <label><input type="checkbox" name="proteina" value="carnesVermelhas"> Carnes vermelhas</label>
-                    <label><input type="checkbox" name="proteina" value="frango"> Frango</label>
-                    <label><input type="checkbox" name="proteina" value="peixesGordos"> Peixes gordos</label>
-                    <label><input type="checkbox" name="proteina" value="ovos"> Ovos</label>
-                    <label><input type="checkbox" name="proteina" value="bacon"> Bacon</label>
-                    <label><input type="checkbox" name="proteina" value="queijos"> Queijos</label>
+                    <label><input type="checkbox" name="proteina" id="Carnes vermelhas" value="Carnes vermelhas"> Carnes vermelhas</label>
+                    <label><input type="checkbox" name="proteina" id="Frango" value="Frango"> Frango</label>
+                    <label><input type="checkbox" name="proteina" id="Peixes" value="Peixes"> Peixes</label>
+                    <label><input type="checkbox" name="proteina" id="Ovos" value="Ovos"> Ovos</label>
+                    <label><input type="checkbox" name="proteina" id="Bacon" value="Bacon"> Bacon</label>
+                    <label><input type="checkbox" name="proteina" id="Queijos" value="Queijos"> Queijos</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Legumes</legend>
-                    <label><input type="checkbox" name="legumes" value="brocolis"> Brócolis</label>
-                    <label><input type="checkbox" name="legumes" value="couve-flor"> Couve-flor</label>
-                    <label><input type="checkbox" name="legumes" value="espinafre"> Espinafre</label>
-                    <label><input type="checkbox" name="legumes" value="abobrinha"> Abobrinha</label>
-                    <label><input type="checkbox" name="legumes" value="pepino"> Pepino</label>
-                    <label><input type="checkbox" name="legumes" value="cogumelos"> Cogumelos</label>
+                    <label><input type="checkbox" name="legumes"  id="Brócolis" value="Brócolis"> Brócolis</label>
+                    <label><input type="checkbox" name="legumes"  id="Couve-flor" value="Couve-flor"> Couve-flor</label>
+                    <label><input type="checkbox" name="legumes"  id="Espinafre" value="Espinafre"> Espinafre</label>
+                    <label><input type="checkbox" name="legumes"  id="Abobrinha" value="Abobrinha"> Abobrinha</label>
+                    <label><input type="checkbox" name="legumes"  id="Pepino" value="Pepino"> Pepino</label>
+                    <label><input type="checkbox" name="legumes"  id="Cogumelos" value="Cogumelos"> Cogumelos</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Verduras</legend>
-                    <label><input type="checkbox" name="verduras" value="rucula"> Rúcula</label>
-                    <label><input type="checkbox" name="verduras" value="alface"> Alface</label>
-                    <label><input type="checkbox" name="verduras" value="couve"> Couve</label>
-                    <label><input type="checkbox" name="verduras" value="acelga"> Acelga</label>
-                    <label><input type="checkbox" name="verduras" value="agriao"> Agrião</label>
-                    <label><input type="checkbox" name="verduras" value="mangericao"> Mangericão</label>
+                    <label><input type="checkbox" name="verduras" id="Rúcula" value="Rúcula"> Rúcula</label>
+                    <label><input type="checkbox" name="verduras" id="Alface" value="Alface"> Alface</label>
+                    <label><input type="checkbox" name="verduras" id="Couve" value="Couve"> Couve</label>
+                    <label><input type="checkbox" name="verduras" id="Acelga" value="Acelga"> Acelga</label>
+                    <label><input type="checkbox" name="verduras" id="Agrião" value="Agrião"> Agrião</label>
+                    <label><input type="checkbox" name="verduras" id="Mangericão" value="Mangericão"> Mangericão</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Carboidratos/Gorduras</legend>
-                    <label><input type="checkbox" name="carboidratos" value="abacate"> Abacate</label>
-                    <label><input type="checkbox" name="carboidratos" value="azeite"> Azeite</label>
-                    <label><input type="checkbox" name="carboidratos" value="manteiga"> Manteiga</label>
-                    <label><input type="checkbox" name="carboidratos" value="coco"> Coco</label>
-                    <label><input type="checkbox" name="carboidratos" value="mct"> MCT</label>
-                    <label><input type="checkbox" name="carboidratos" value="oleaginosas"> Oleaginosas</label>
-                </fieldset>
-            </div>
+                    <label><input type="checkbox" name="carboidratos" id="Abacate" value="Abacate"> Abacate</label>
+                    <label><input type="checkbox" name="carboidratos" id="Azeite" value="Azeite"> Azeite</label>
+                    <label><input type="checkbox" name="carboidratos" id="Manteiga" value="Manteiga"> Manteiga</label>
+                    <label><input type="checkbox" name="carboidratos" id="Coco" value="Coco"> Coco</label>
+                    <label><input type="checkbox" name="carboidratos" id="MCT" value="MCT"> MCT</label>
+                    <label><input type="checkbox" name="carboidratos" id="Oleaginosas" value="Oleaginosas"> Oleaginosas</label>
+                    </fieldset>
+</div>
 
             <div class="buttons">
-                <button type="button" class="voltar">Voltar</button>
+                <button type="button" class="voltar" onclick="voltarDadosPessoais()" >Voltar</button>
                 <a type="submit"  class="button avancar"  onclick="salvarPreferencias()" href="plano-alimentar.html">Ver Meu Plano Alimentar</a>
             </div>
         </form>

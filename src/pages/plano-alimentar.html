@@ -47,37 +47,39 @@
     </section>
 
     <section class="plano">
-    <h2>Seu Plano Alimentar - <span id="dieta">...</span></h2>
-    <p class="descricao"><span id="descricao">...</span></p>
+
+      <div class="plano-alimentar">
+        <h2>Seu Plano Alimentar - <span id="dieta">...</span></h2>
+        <p class="descricao"><span id="descricao">...</span></p>
 
       <div class="categorias">
         <div class="categoria proteina">
           <h3><span class="dot azul"></span> Proteínas</h3>
-          <p class="vazio">Nenhuma proteína selecionada</p>
+          <ul></ul>
         </div>
         <div class="categoria legumes">
           <h3><span class="dot verde"></span> Legumes</h3>
-          <p class="vazio">Nenhum legume selecionado</p>
+          <ul></ul>
         </div>
         <div class="categoria verduras">
           <h3><span class="dot verde"></span> Verduras</h3>
-          <p class="vazio">Nenhuma verdura selecionada</p>
+          <ul></ul>
         </div>
-        <div class="categoria carbo">
+        <div class="categoria carboidrato">
           <h3><span class="dot laranja"></span> Carboidratos</h3>
-          <ul>
-            <li>Quinoa</li>
-          </ul>
+          <ul></ul>
         </div>
+      </div>
+
       </div>
 
       <div class="alergia">
         <strong>⚠️ Alergias Consideradas:</strong>
-        <p>Alimentos foram filtrados considerando suas alergias: <strong>Ovo</strong></p>
+        <p><strong><p id="alergia-texto"></p></strong></p>
       </div>
 
       <div class="botoes">
-        <button type="button">Criar Novo Plano</button>
+        <button type="button" onclick="limparSessionStorage()">Criar Novo Plano</button>
       </div>
     </section>
   </main>

@@ -189,3 +189,54 @@ p {
   font-weight: bold;
 }
 
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.categoria {
+  text-align: left;
+}
+
+.categoria h3 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.categoria .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.azul {
+  background-color: #1f78ff;
+}
+
+.verde {
+  background-color: #2e8b57;
+}
+
+.laranja {
+  background-color: #ff7f0e;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+li {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
