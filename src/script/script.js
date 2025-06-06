@@ -96,6 +96,7 @@ function validaDadosPessoais(peso, altura, idade, sexo, objetivo) {
 
   return null; 
 }
+module.exports = {validaDadosPessoais};
 
 function salvarPreferencias() {
   if (!validarRestricoesComAlimentos()) {
