@@ -98,9 +98,10 @@ function validaDadosPessoais(peso, altura, idade, sexo, objetivo) {
 }
 
 function salvarPreferencias() {
-  if (!validarRestricoesComAlimentos()) {
-    return;
-  }
+  console.log('teste1')
+ 
+  validarAlimentos()
+  console.log('teste2')
 
   function getValoresSelecionados(nome) {
     const checkboxes = document.getElementsByName(nome);
@@ -111,6 +112,7 @@ function salvarPreferencias() {
       }
     }
     return selecionados;
+    
   }
 
   const proteinas = getValoresSelecionados("proteina");
@@ -122,48 +124,47 @@ function salvarPreferencias() {
   sessionStorage.setItem("legumes", JSON.stringify(legumes));
   sessionStorage.setItem("verduras", JSON.stringify(verduras));
   sessionStorage.setItem("carboidratos", JSON.stringify(carboidratos));
+
+   window.location.href = "plano-alimentar.html";
+
 }
 
-function validarRestricoesComAlimentos() {
-  const normalizar = str => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+function validarAlimentos() {
+    const restricoes = JSON.parse(sessionStorage.getItem("restricoes")) || [];
 
-  const restricoes = Array.from(document.querySelectorAll('input[name="restricao"]:checked'))
-    .map(el => normalizar(el.value));
+    const alimentosProibidos = {
+        "Lactose": ["Iogurte", "Iogurte grego", "Queijos", "Manteiga", "Whey protein"],
+        "Gluten": ["Pao", "Pães integrais", "Sementes", "Aveia"],
+        "Proteína do leite": ["Queijos", "Manteiga"],
+        "Ovo": ["Ovos"],
+        "Frutos do mar": ["Frutos do mar"],
+    };
 
-  if (restricoes.includes("nenhuma") && restricoes.length > 1) {
-    alert('Você não pode selecionar "Nenhuma" junto com outras restrições.');
-    return false;
-  }
+  
+    const selecionados = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                              .map(cb => cb.value);
 
-  const alimentosSelecionados = [
-    ...document.querySelectorAll('input[name="proteina"]:checked'),
-    ...document.querySelectorAll('input[name="legumes"]:checked'),
-    ...document.querySelectorAll('input[name="verduras"]:checked'),
-    ...document.querySelectorAll('input[name="carboidratos"]:checked')
-  ].map(el => normalizar(el.value));
+    let conflito = null;
+    restricoes.forEach(restricao => {
+        const proibidos = alimentosProibidos[restricao] || [];
+        proibidos.forEach(proibido => {
+            if (selecionados.includes(proibido)) {
+                conflito = `Você selecionou "${proibido}", que é incompatível com a restrição "${restricao}".`;
+            }
+        });
+    });
 
-  const mapaRestricoes = {
-    "lactose": ["iogurte", "iogurte grego", "queijos", "leite", "manteiga", "whey protein"],
-    "gluten": ["pao", "pao integral", "massas", "aveia", "trigo", "cevada", "centeio"],
-    "proteina do leite": ["queijos", "leite", "iogurte", "whey protein"],
-    "ovo": ["ovo", "ovos"],
-    "frutos do mar": ["frutos do mar", "peixes", "camarao", "lagosta"]
-  };
-
-  for (const restricao of restricoes) {
-    const proibidos = mapaRestricoes[restricao] || [];
-    const conflito = proibidos.find(proibido =>
-      alimentosSelecionados.some(alimento => alimento.includes(proibido))
-    );
-
+   
     if (conflito) {
-      alert(`Você selecionou um alimento que contém a restrição: "${restricao.toUpperCase()}". Alimento conflitante: "${conflito}".`);
-      return false;
+      
+        alert(conflito);
+        throw new Error(conflito);  
     }
-  }
 
-  return true;
+
 }
+
+
 
 
 function calculaTMB(peso, altura, idade, sexo) {
@@ -302,4 +303,5 @@ function onload() {
   dieta(dietaEscolhida);
   preencherAlimentos(proteinas, legumes, verduras, carboidratos);
   preencherRestricoes(restricoes);
+  
 }
