@@ -96,7 +96,15 @@ function validaDadosPessoais(peso, altura, idade, sexo, objetivo) {
 
   return null; 
 }
-module.exports = {validaDadosPessoais};
+module.exports = {
+  validaDadosPessoais,
+  calculaTMB,
+  calculaIMC,
+  calculaAGUA,
+  meta,
+  dieta,
+  validarAlimentos,
+};
 
 function salvarPreferencias() {
   console.log('teste1')
