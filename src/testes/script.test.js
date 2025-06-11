@@ -98,9 +98,10 @@ describe('Testes do script', () => {
         });
     });
 });
+
 describe('calculaTMB', () => {
     beforeEach(() => {
-        document.body.innerHTML = <input id="tmb" value="" />;
+        document.body.innerHTML = `<input id="tmb" value="" />`;
     });
 
     test('calcula TMB corretamente para sexo masculino', () => {
@@ -120,5 +121,104 @@ describe('calculaTMB', () => {
     test('retorna false para sexo inválido', () => {
         const retorno = calculaTMB(70, 175, 25, 'outro');
         expect(retorno).toBe(false);
+    });
+});
+
+describe('calculaIMC', () => {
+    beforeEach(() => {
+        document.body.innerHTML = `
+            <input id="imc" value="" />
+            <span id="categoria"></span>
+        `;
+    });
+
+    test('classifica como "Abaixo do peso"', () => {
+        calculaIMC(50, 170); // IMC ~17.3
+        expect(Number(document.getElementById('imc').value)).toBe(Math.floor(17.3));
+        expect(document.getElementById('categoria').textContent).toBe('Abaixo do peso');
+    });
+
+    test('classifica como "Peso normal"', () => {
+        calculaIMC(65, 170); // IMC ~22.5
+        expect(Number(document.getElementById('imc').value)).toBe(Math.floor(22.5));
+        expect(document.getElementById('categoria').textContent).toBe('Peso normal');
+    });
+
+    test('classifica como "Sobrepeso"', () => {
+        calculaIMC(80, 170); // IMC ~27.7
+        expect(Number(document.getElementById('imc').value)).toBe(Math.floor(27.7));
+        expect(document.getElementById('categoria').textContent).toBe('Sobrepeso');
+    });
+
+    test('classifica como "Obesidade"', () => {
+        calculaIMC(95, 170); // IMC ~32.8
+        expect(Number(document.getElementById('imc').value)).toBe(Math.floor(32.8));
+        expect(document.getElementById('categoria').textContent).toBe('Obesidade');
+    });
+});
+
+describe('calculaAGUA', () => {
+    beforeEach(() => {
+        document.body.innerHTML = `<input id="agua" value="" />`;
+    });
+
+    test('calcula corretamente a quantidade de água', () => {
+        calculaAGUA(70); // 70 * 35 = 2450
+        expect(Number(document.getElementById('agua').value)).toBe(2450);
+    });
+});
+
+describe('meta', () => {
+    beforeEach(() => {
+        document.body.innerHTML = `<input id="meta" value="" />`;
+    });
+
+    test('define meta como "Emagrecer" se objetivo for "perder"', () => {
+        meta('perder');
+        expect(document.getElementById('meta').value).toBe('Emagrecer');
+    });
+
+    test('define meta como "Hipertrofia" se objetivo for outro valor', () => {
+        meta('ganhar');
+        expect(document.getElementById('meta').value).toBe('Hipertrofia');
+    });
+});
+
+describe('dieta', () => {
+    beforeEach(() => {
+        document.body.innerHTML = `
+            <span id="dieta"></span>
+            <span id="descricao"></span>
+        `;
+    });
+
+    test('define Mediterrânea corretamente', () => {
+        dieta('M');
+        expect(document.getElementById('dieta').textContent).toBe('Mediterrânea');
+        expect(document.getElementById('descricao').textContent).toBe('Saúde cardiovascular e manutenção de peso');
+    });
+
+    test('define Low Carb corretamente', () => {
+        dieta('L');
+        expect(document.getElementById('dieta').textContent).toBe('Low Carb');
+        expect(document.getElementById('descricao').textContent).toBe('Emagrecimento e controle glicêmico');
+    });
+
+    test('define Cetogênica corretamente', () => {
+        dieta('C');
+        expect(document.getElementById('dieta').textContent).toBe('Cetogênica');
+        expect(document.getElementById('descricao').textContent).toBe('Perda de gordura rápida e aumento de foco');
+    });
+
+    test('define Vegetariana corretamente', () => {
+        dieta('V');
+        expect(document.getElementById('dieta').textContent).toBe('Vegetariana');
+        expect(document.getElementById('descricao').textContent).toBe('Alimentação plant-based com proteínas completas');
+    });
+
+    test('define valor inválido se código desconhecido', () => {
+        dieta('X');
+        expect(document.getElementById('dieta').textContent).toBe('Valor inválido');
+        expect(document.getElementById('descricao').textContent).toBe('');
     });
 });
