@@ -98,3 +98,27 @@ describe('Testes do script', () => {
         });
     });
 });
+describe('calculaTMB', () => {
+    beforeEach(() => {
+        document.body.innerHTML = <input id="tmb" value="" />;
+    });
+
+    test('calcula TMB corretamente para sexo masculino', () => {
+        calculaTMB(70, 175, 25, 'masculino');
+        const resultado = document.getElementById('tmb').value;
+        const esperado = Math.floor((10 * 70) + (6.25 * 175) - (5 * 25) + 5);
+        expect(Number(resultado)).toBe(esperado);
+    });
+
+    test('calcula TMB corretamente para sexo feminino', () => {
+        calculaTMB(60, 165, 30, 'feminino');
+        const resultado = document.getElementById('tmb').value;
+        const esperado = Math.floor((10 * 60) + (6.25 * 165) - (5 * 30) - 161);
+        expect(Number(resultado)).toBe(esperado);
+    });
+
+    test('retorna false para sexo inválido', () => {
+        const retorno = calculaTMB(70, 175, 25, 'outro');
+        expect(retorno).toBe(false);
+    });
+});
